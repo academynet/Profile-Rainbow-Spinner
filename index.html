@@ -1,0 +1,56 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AcademyNet</title>
+    <style>
+        @property --a {
+            syntax: '<angle>';
+            initial-value: 0deg;
+            inherits: false
+        }
+
+        html, body { 
+            display: grid;
+        }
+
+        html { 
+            height: 100%;
+        }
+
+        body {
+            background: dimgrey;
+        }
+
+        .spinner {
+            box-sizing: border-box;
+            place-self: center;
+            width: min(100%, 18em);
+            aspect-ratio: 1;
+            padding: 1.25em;
+            border-radius: 50%;
+            box-shadow: 2px 2px 17px #000;
+            background: url('/Logo.jpg')
+                50% / cover content-box,
+                conic-gradient(
+                    in hsl longer hue from 
+                    var(--a),
+                    hsl(0, 100%, 80%) 0 0
+                );
+            animation: a 2s linear infinite;
+        }
+
+        @keyframes a  {
+            to { 
+                --a: 1turn;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="spinner"></div>
+</body>
+
+</html>
